@@ -1,4 +1,9 @@
-{extends 'base.html'}
-{block content}
-<h1>Tech Lead at IBM</h1>
-{endblock}
+{%extends 'base.html'%}
+{%block content%}
+<h1>Login in to chat</h1>
+<form action="">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button type="submit">Let's Chat</button>
+</form>
+{%endblock%}
