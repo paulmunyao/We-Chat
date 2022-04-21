@@ -56,7 +56,7 @@ ROOT_URLCONF = 'webinar.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'webinar/templates')],
+        'DIRS': [os.path.join(BASE_DIR,'aigora/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,7 +78,11 @@ WSGI_APPLICATION = 'webinar.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME':'chat',
+        'USER':'moringa',
+        'PASSWORD':'Access',
+        'HOST':'127.0.0.1',
+        'PORT':'',
     }
 }
 
