@@ -1,9 +1,24 @@
 {%extends 'base.html'%}
 {%block content%}
-<h1>Sign In to chat</h1>
-<form action="">
-    {%csrf_token%}
-    {{form.as_p}}
-    <button type="submit">Let's Chat</button>
-</form>
-{%endblock%}
+<div class="sign">
+    <h3>Sign Up for a chat</h3>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            {{ form.username}}
+        </div>
+        <div class="mt-3">
+            {{ form.email}}
+        </div>
+        <div class="mt-3">
+            {{ form.password1}}
+        </div>
+        <div class="mt-3">
+            {{ form.password2}}
+        </div>
+        <button class="subm" type="submit">Let's Chat</button>
+    </form>
+    <p class="par">Don't have an account join the community and have a chat</p>
+    <a class="lin" href="{%url 'login' %}">Login</a>
+</div>
+{% endblock %}
