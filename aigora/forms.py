@@ -13,7 +13,6 @@ class UserRegisterForm(UserCreationForm):
         fields = ('username', 'email', 'password1', 'password2')
         widgets = {
             'username':forms.TextInput(attrs={'placeholder': 'username','class': 'form-control'}),
-            'email':forms.EmailInput(attrs={'placeholder': 'username','email': 'form-control'}),
             'password1':forms.PasswordInput(attrs={'placeholder': 'password1','class': 'form-control'}),
             'password2':forms.PasswordInput(attrs={'placeholder': 'password2','class': 'form-control'}),
         }
