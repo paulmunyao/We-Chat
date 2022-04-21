@@ -1,1 +1,9 @@
-<h1>Test</h1>
+{%extends 'base.html'%}
+{%block content%}
+<h1>Sign In to chat</h1>
+<form action="">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button type="submit">Let's Chat</button>
+</form>
+{%endblock%}
