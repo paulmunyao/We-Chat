@@ -8,5 +8,6 @@ def index(request):
 def signup(request):
     return render(request,'registration/signup.html')
 
+@login_required(login_url='login')
 def display(request):
     return render(request,'display.html')    
