@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -20,7 +20,6 @@ def signup(request):
     else:
         form = UserRegisterForm()
     return render(request, 'registration/signup.html', {'form': form})
-   
 
 
 @login_required(login_url='login')
