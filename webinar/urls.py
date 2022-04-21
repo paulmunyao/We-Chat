@@ -18,6 +18,6 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('webinar.urls')),
+    path('',include('aigora.urls')),
     path('',include('django.contrib.auth.urls')),
 ]
