@@ -129,3 +129,13 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL ='display'
 LOGOUT_REDIRECT_URL ='home'
+
+DEFAULT_FROM_EMAIL = 'paul.mutiso@student.moringaschool.com'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'paul.mutiso@student.moringaschool.com'
+EMAIL_HOST_PASSWORD = 'ADIDAS19!'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+
