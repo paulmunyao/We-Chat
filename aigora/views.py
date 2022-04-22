@@ -34,7 +34,7 @@ def display(request):
             subject = "Send an email with Django"
             message = cd['message']
 
-            send_mail(subject, message, settings.EMAIL_HOST_USER, [cd['recipient']])
+            send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [cd['recipient']])
             messageSent = True
     else:
         form = EmailForm()

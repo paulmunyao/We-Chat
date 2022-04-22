@@ -1,22 +1,23 @@
 {%extends 'base.html' %}
 {%block content%}
 <h1>Send Email</h1>
-{%if messageSent%}
+{% if messageSent %}
 <div class="container">
-    <h3><strong>Email Successfully sent</strong></h3>
-    <p>Your message was successfully sent {{form.cleaned_data.to}}</p>
+    <h3><strong>Email successfully sent</strong></h3>
+    <p>Your message was successfully sent to {{ form.cleaned_data.to }}</p>
 </div>
-{%else%}
+{% else %}
 <div class="container">
     <h3><strong>Send E-mail</strong></h3>
-    <div class="text-center">
-        <h3 class="log">Login for a Chat</h3>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button class="btn btn-secondary" type="submit">Let's chat</button>
-        </form>
-    </div>
+
+    <form method="post">
+        {% csrf_token %} {{ form.as_p }}
+        <br />
+        <div class="text-center">
+            <input type="submit" class="btn btn-secondary" style="width: 100%" value="Send e-mail" />
+        </div>
+    </form>
 </div>
+
 {%endif%}
 {%endblock%}
