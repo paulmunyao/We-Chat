@@ -1,12 +1,14 @@
 {%extends 'base.html' %}
 {%block content%}
-<h1>Send Email</h1>
 {% if messageSent %}
 <div class="container">
     <h3><strong>Email successfully sent</strong></h3>
     <p>Your message was successfully sent to {{ form.cleaned_data.to }}</p>
 </div>
 {% else %}
+<div class="logout">
+    <a class="link-one" href="{%url 'logout'%}">Logout</a>
+</div>
 <div class="container">
     <h3><strong>Send E-mail</strong></h3>
 
