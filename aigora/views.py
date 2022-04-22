@@ -26,4 +26,16 @@ def signup(request):
 
 @login_required(login_url='login')
 def display(request):
-    return render(request, 'display.html')
+    messageSent = False
+    if request.method == 'POST':
+        form = EmailForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            subject = "Send an email with Django"
+            message = cd['message']
+
+            send_mail(subject, message, settings.EMAIL_HOST_USER, [cd['recipient']])
+            messageSent = True
+    else:
+        form = EmailForm()
+    return render(request, 'display.html',{'form':form, 'messageSent':messageSent})
