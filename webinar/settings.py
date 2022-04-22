@@ -11,7 +11,16 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 from pathlib import Path
+
+cloudinary.config(
+    cloud_name="dgt1bdrye",
+    api_key="621519364968887",
+    api_secret="1xRraoghj5SCJWYfVbvC-Xf7z1Y"
+)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'aigora',
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
