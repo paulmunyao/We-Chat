@@ -16,3 +16,18 @@ class UserRegisterForm(UserCreationForm):
             'password1': forms.PasswordInput(attrs={'placeholder': 'password1', 'class': 'form-control'}),
             'password2': forms.PasswordInput(attrs={'placeholder': 'password2', 'class': 'form-control'}),
         }
+
+
+class EmailForm(forms.Form):
+    recipient = forms.EmailField()
+    message = forms.CharField(widget=forms.Textarea)
+
+    class Meta:
+        model = User
+        fields = ('recipient', 'message')
+        widgets = {
+            'recipient': forms.EmailInput(attrs={'placeholder': 'recipient', 'class': 'form-control'}),
+            'message': forms.TextInput(attrs={'placeholder': 'message', 'class': 'form-control'}),
+        }
+
+

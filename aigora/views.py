@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm,EmailForm
+from django.core.mail import send_mail
+from django.conf import settings
 
 # Create your views here.
 
