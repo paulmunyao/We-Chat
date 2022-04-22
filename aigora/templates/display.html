@@ -1,4 +1,10 @@
 {%extends 'base.html' %}
 {%block content%}
 <h1>Send Email</h1>
+{%if messageSent%}
+<div class="container">
+    <h3><strong>Email Successfully sent</strong></h3>
+    <p>Your message was successfully sent {{form.cleaned_data.to}}</p>
+</div>
+{%else%}
 {%endblock%}
