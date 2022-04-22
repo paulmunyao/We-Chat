@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{% block content %}
+<div class="jina">
+    <h1>{{user.username}}</h1>
+    <p>{{user.email}}</p>
+    <img class="rounded-circle" src="{{request.user.profile.image.url}}" alt="">
+    <p>{{user.bio}}</p>
+</div>
+
+<div class="prof">
+    <form method="post" enctype='multipart/form-data'>
+        {% csrf_token %}
+        {{ profile_form.as_p }}
+        <button class="submi" type="submit">Update Profile</button>
+    </form>
+</div>
+{% endblock %}
