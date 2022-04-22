@@ -10,10 +10,6 @@ from django.conf import settings
 # Create your views here.
 
 
-def index(request):
-    return render(request, 'home.html')
-
-
 def signup(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)

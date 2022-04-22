@@ -132,13 +132,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR,  'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL ='display'
-LOGOUT_REDIRECT_URL ='home'
+LOGOUT_REDIRECT_URL ='signup'
 
 DEFAULT_FROM_EMAIL = 'paul.mutiso@student.moringaschool.com'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -148,4 +149,5 @@ EMAIL_HOST_PASSWORD = 'ADIDAS19!'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
