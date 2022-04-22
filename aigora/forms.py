@@ -1,4 +1,5 @@
 from django import forms
+from .models import Profile
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import TextInput, EmailInput, PasswordInput
@@ -31,3 +32,34 @@ class EmailForm(forms.Form):
         }
 
 
+class UpdateUserForm(forms.ModelForm):
+    email = forms.EmailField(
+        max_length=254,
+        required=True,
+        widget=EmailInput(attrs={'class': 'form-control'}),
+    )
+
+    username = forms.CharField(
+        max_length=255,
+        required=True,
+        widget=TextInput(attrs={'class': 'form-control'}),
+    )
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', )
+        widgets = {
+            'username': TextInput(attrs={'class': 'form-control'}),
+            'email': EmailInput(attrs={'class': 'form-control'}),
+        }
+
+
+class UpdateProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['image', 'bio', 'location', 'description']
+        widgets = {
+            'bio': forms.Textarea(attrs={'class': 'biograpghy'}),
+            'location': forms.TextInput(attrs={'class': 'loca'}),
+            'description': forms.Textarea(attrs={'class': 'descrip'}),
+        }
