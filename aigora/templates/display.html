@@ -7,4 +7,15 @@
     <p>Your message was successfully sent {{form.cleaned_data.to}}</p>
 </div>
 {%else%}
+<div class="container">
+    <h3><strong>Send E-mail</strong></h3>
+    <div class="text-center">
+        <h3 class="log">Login for a Chat</h3>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-secondary" type="submit">Let's chat</button>
+        </form>
+    </div>
+</div>
 {%endblock%}
